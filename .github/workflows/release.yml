@@ -35,15 +35,18 @@ jobs:
       - name: Commit and push
         env:
           VERSION: ${{ github.event.inputs.version }}
-          FILE_VERSION: ${{ format('{0}', github.event.inputs.version) }}
         run: |
           # Remove 'v' prefix if present
           FILE_VERSION=${VERSION#v}
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -A
-          git commit -m "Update skill version to $FILE_VERSION"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update skill version to $FILE_VERSION"
+            git push
+          fi
 
       - name: Create GitHub Release
         uses: actions/create-release@v1
