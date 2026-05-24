@@ -1,0 +1,20 @@
+{
+  "name": "open-notebook-cli-skills",
+  "description": "CLI tool for Open Notebook API - Manage notebooks, sources, search, and chat with your research materials",
+  "version": "0.0.7",
+  "author": {
+    "name": "darimuri",
+    "url": "https://github.com/darimuri"
+  },
+  "homepage": "https://github.com/darimuri/open-notebook-cli-skills",
+  "repository": "https://github.com/darimuri/open-notebook-cli-skills",
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "open-notebook",
+    "notebooks",
+    "research",
+    "sources",
+    "search"
+  ]
+}
