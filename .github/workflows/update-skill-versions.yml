@@ -24,6 +24,8 @@ jobs:
           echo "Updating to version: $VERSION"
           # Update marketplace.json
           sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$VERSION\"/" .claude-plugin/marketplace.json
+          # Update plugin.json
+          sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$VERSION\"/" .claude-plugin/plugin.json
           # Update SKILL.md
           sed -i "s/version: \"[^\"]*\"/version: \"$VERSION\"/" skills/open-notebook/SKILL.md
 
