@@ -1,4 +1,4 @@
-name: Update Skill Versions
+name: Release
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
         required: true
 
 jobs:
-  update-versions:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
