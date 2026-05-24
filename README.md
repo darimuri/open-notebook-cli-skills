@@ -12,7 +12,7 @@ Claude Code plugin for Open Notebook API.
 
 ```bash
 claude plugin marketplace add darimuri/open-notebook-cli-skills
-claude plugin install open-notebook@open-notebook-cli-skills
+claude plugin install open-notebook-cli-skills
 ```
 
 After installation, run `/reload-plugins` to activate, then use `/open-notebook` commands in Claude Code.
