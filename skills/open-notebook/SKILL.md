@@ -96,6 +96,8 @@ Make sure `open-notebook` CLI is installed and accessible in PATH. See [CLI Inst
 /open-notebook sources embed-batch --notebook <notebook_id>
 /open-notebook sources embed-batch --notebook <notebook_id> --max 5
 /open-notebook sources embed-batch --polling-period 5
+/open-notebook sources embed-batch --continue-on-error
+/open-notebook sources embed-batch --embed-timeout 15m
 
 # Check source status
 /open-notebook sources status <source_id>
