@@ -48,6 +48,8 @@ Make sure `open-notebook` CLI is installed and accessible in PATH. See [CLI Inst
 
 ### Sources
 
+> **Source URL 형식**: 소스 링크는 `https://open-notebook.darimuri.me/sources/source:<source_id>` 형태입니다. API 응답의 source ID에는 `source:` prefix가 포함됩니다.
+
 ```bash
 # Add a single URL
 /open-notebook sources add https://example.com/article
@@ -99,8 +101,8 @@ Make sure `open-notebook` CLI is installed and accessible in PATH. See [CLI Inst
 /open-notebook sources embed-batch --continue-on-error
 /open-notebook sources embed-batch --embed-timeout 15m
 
-# Check source status
-/open-notebook sources status <source_id>
+# Check source status (includes embedded field)
+/open-notebook sources get <source_id>
 ```
 
 ### Sources (list command)
