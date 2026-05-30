@@ -63,6 +63,9 @@ Make sure `open-notebook` CLI is installed and accessible in PATH. See [CLI Inst
 # Recursively with depth limit
 /open-notebook sources add -r --depth 3 https://docs.site.com/guide
 
+# Recursively excluding paths
+/open-notebook sources add -r --depth 3 --exclude-path-contains "/zh" --exclude-path-contains "/ko" https://openkruise.io/docs
+
 # Add from file (one URL per line)
 /open-notebook sources add --file urls.txt
 
@@ -74,6 +77,12 @@ Make sure `open-notebook` CLI is installed and accessible in PATH. See [CLI Inst
 
 # Add URL but skip embedding (for bulk import)
 /open-notebook sources add --skip-embed https://example.com
+
+# Add URL with async processing (submit and return immediately)
+/open-notebook sources add --async https://example.com
+
+# ⚠️ --async and --recursive (-r) are mutually exclusive
+# They cannot be used together - async processing is incompatible with recursive crawling
 
 # Upload a file
 /open-notebook sources upload /path/to/file.pdf
@@ -103,6 +112,10 @@ Make sure `open-notebook` CLI is installed and accessible in PATH. See [CLI Inst
 
 # Check source status (includes embedded field)
 /open-notebook sources get <source_id>
+
+# Delete source(s)
+/open-notebook sources delete <source_id>
+/open-notebook sources delete <source_id_1> <source_id_2> <source_id_3>
 ```
 
 ### Sources (list command)
@@ -173,11 +186,17 @@ open-notebook search simple "Summarize the key points"
 
 ```bash
 # List recent commands (server v1.8.5+ only)
+# Note: This is not yet implemented on the server (returns empty list)
 /open-notebook commands list
+/open-notebook commands list --command <name>
+/open-notebook commands list --status running
+/open-notebook commands list --limit 10
 
-# Note: List may return empty if not implemented on server
 # Check command status
 /open-notebook commands status <command_id>
+
+# Cancel a running command
+/open-notebook commands cancel <command_id>
 ```
 
 ## CLI Installation
