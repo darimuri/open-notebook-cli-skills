@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Claude Code skill for Open Notebook API - Manage notebooks, sources, search, and chat with your research materials",
-    "version": "0.0.3"
+    "version": "0.0.4"
   },
   "plugins": [
     {
       "name": "open-notebook-cli-skills",
       "source": "./skills/open-notebook",
       "description": "CLI tool for Open Notebook API - Manage notebooks, sources, search, and chat with your research materials",
-      "version": "0.0.3",
+      "version": "0.0.4",
       "author": {
         "name": "darimuri"
       },
